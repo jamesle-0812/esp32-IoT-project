@@ -19,11 +19,11 @@ extern const char *ssid;
 extern const char *pass;
 
 /* FreeRTOS event group to signal when we are connected*/
-EventGroupHandle_t s_wifi_event_group;
+static EventGroupHandle_t s_wifi_event_group;
+
 
 static void wifi_handler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_data) {
-    switch (event_id)
-    {
+    switch (event_id) {
     case WIFI_EVENT_STA_START:
         printf("WiFi CONNECTING...\n");
         esp_wifi_connect();
@@ -80,6 +80,8 @@ void Wifi::init() {
     ESP_ERROR_CHECK(esp_wifi_init(&_initCfg));
 
     /** EVENT LOOP CRAZINESS **/
+    s_wifi_event_group = xEventGroupCreate();
+
     ESP_ERROR_CHECK(esp_event_handler_instance_register(WIFI_EVENT,
                                                         ESP_EVENT_ANY_ID,
                                                         &wifi_handler,
