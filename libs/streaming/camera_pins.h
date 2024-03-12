@@ -2,9 +2,9 @@
 
 /* OV7670 */
 
-#define BOARD_WROVER_KIT
+#define ESP32_WROVER_CAM
 
-#ifdef BOARD_WROOM_KIT
+#ifdef ESP32_WROOM_KIT
 
 #define CAM_PIN_PWDN    -1  // power down is not used
 #define CAM_PIN_RESET   -1  // software reset will be performed
@@ -29,10 +29,10 @@
 
 #endif
 
-#ifdef BOARD_WROVER_KIT
+#ifdef ESP32_WROVER_KIT
 
-#define CAM_PIN_PWDN    -1  //power down is not used
-#define CAM_PIN_RESET   -1 //software reset will be performed
+#define CAM_PIN_PWDN    -1  // power down is not used
+#define CAM_PIN_RESET   -1  // software reset will be performed
 #define CAM_PIN_XCLK    21
 #define CAM_PIN_SIOD    26
 #define CAM_PIN_SIOC    27
@@ -53,7 +53,7 @@
 
 /* OV2640 */
 
-#ifdef BOARD_WROVER_CAM
+#ifdef ESP32_WROVER_CAM
 
 #define CAM_PIN_PWDN    -1  //power down is not used
 #define CAM_PIN_RESET   -1 //software reset will be performed
