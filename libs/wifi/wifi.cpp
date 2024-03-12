@@ -15,8 +15,6 @@
 #define WIFI_FAILURE    1 << 1
 
 int retry_num = 0;
-extern const char *ssid;
-extern const char *pass;
 
 /* FreeRTOS event group to signal when we are connected*/
 static EventGroupHandle_t s_wifi_event_group;
@@ -96,8 +94,8 @@ void Wifi::init() {
     
     wifi_config_t _wifiCfg = {.sta = {}};
 
-    strcpy((char*)_wifiCfg.sta.ssid, ssid);    
-    strcpy((char*)_wifiCfg.sta.password, pass);
+    strcpy((char*)_wifiCfg.sta.ssid, CONFIG_ESP_WIFI_SSID);    
+    strcpy((char*)_wifiCfg.sta.password, CONFIG_ESP_WIFI_PASSWORD);
     
     // _wifiCfg.sta.pmf_cfg.capable = true;
     // _wifiCfg.sta.pmf_cfg.required = false;

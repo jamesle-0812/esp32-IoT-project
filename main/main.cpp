@@ -13,9 +13,6 @@
 #include "wifi.h"
 #include "streaming.h"
 
-const char *ssid = "Mi4Router";
-const char *pass = "368lythuongkiet";
-
 /* const char *ssid = CONFIG_ESP_WIFI_SSID;
 const char *pass = CONFIG_ESP_WIFI_PASSWORD; */
 

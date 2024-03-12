@@ -1,5 +1,5 @@
 # put here your custom config value
-menu "Example Configuration"
+menu "Wifi Settings"
 config ESP_WIFI_SSID
     string "WiFi SSID"
     default "myssid"
