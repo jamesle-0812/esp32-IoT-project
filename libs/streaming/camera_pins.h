@@ -2,7 +2,7 @@
 
 /* OV7670 */
 
-#define ESP32_WROVER_CAM
+#define ESP32_WROVER_KIT
 
 #ifdef ESP32_WROOM_KIT
 
