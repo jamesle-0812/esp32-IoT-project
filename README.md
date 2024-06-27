@@ -11,6 +11,10 @@ a **smart surveillance station** set up outdoor, so my parents can keep an eye o
 The ESP32 creates a little `HTTP` server and then listen to `GET` requests at its own IP address with WiFi-STA mode. 
 When the request is triggered, it streams QVGA BMP image from the camera.
 
+<p align="center">
+    <img src="./examples/hand.gif" alt="Example with hand" width="400">
+</p>
+
 ## Why BMP instead of JPG?
 
 This is the big advantage of OV7670 which doesn't support JPG mode. The only way to stream JPG is to capture frames in
